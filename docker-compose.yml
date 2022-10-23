@@ -1,0 +1,7 @@
+version: "2"
+services:
+  essaysharproject:
+    image: essaysharproject:latest
+    container_name: essaysharproject
+    ports:
+      - "8080:8080"
