@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.essays</groupId>
-    <artifactId>essaysharproject</artifactId>
+    <artifactId>Essayshark</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
@@ -38,14 +38,28 @@
     </properties>
 
     <build>
-        <finalName>essaysharproject</finalName>
+        <finalName>Essayshark</finalName>
         <plugins>
             <plugin>
-                <groupId>org.essays</groupId>
-                <artifactId>essaysharproject</artifactId>
-                <version>1.0.0</version>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
-                    <mainClass>org.essays.App</mainClass>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>org.essays.App</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
                 </configuration>
             </plugin>
         </plugins>
