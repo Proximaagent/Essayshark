@@ -21,8 +21,8 @@ public class App {
   JavascriptExecutor js;
   
   public App() {
-    // System.setProperty("webdriver.chrome.driver","/home/beckhamochieng/essaysharproject/src/main/resources/chromedriver_linux64/chromedriver");
-    System.setProperty("webdriver.chrome.driver","/home/azureuser/essaysharproject/src/main/resources/chromedriver_linux64/chromedriver");
+    System.setProperty("webdriver.chrome.driver","/home/beckhamochieng/essaysharproject/src/main/resources/chromedriver_linux64/chromedriver");
+    // System.setProperty("webdriver.chrome.driver","/home/azureuser/essaysharproject/src/main/resources/chromedriver_linux64/chromedriver");
 
     ChromeOptions options = new ChromeOptions();
     options.addArguments("--disable-dev-shm-usage");
@@ -96,17 +96,10 @@ public class App {
     wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[2]/div/div[5]/div/div[2]/table/tbody/tr[9]/td[2]/a")));
 
     app.driver.findElement(By.xpath("/html/body/div[2]/div/div[5]/div/div[2]/table/tbody/tr[9]/td[2]/a")).click();
-    app.driver.navigate().refresh();
-    app.driver.navigate().refresh();
-    app.driver.navigate().refresh();
-    app.driver.navigate().refresh();
-    app.driver.navigate().refresh();
-
 
     try {
 
         while (true) {
-            app.driver.navigate().refresh();
             app.driver.findElement(By.id("rec_bid")).click();
             app.driver.findElement(By.id("apply_order")).click();
             app.driver.navigate().refresh();
