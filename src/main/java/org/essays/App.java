@@ -22,7 +22,7 @@ public class App {
   
   public App() {
     System.setProperty("webdriver.chrome.driver","/home/beckhamochieng/essaysharproject/src/main/resources/chromedriver_linux64/chromedriver");
-    // System.setProperty("webdriver.chrome.driver","/home/azureuser/EssayShark/src/chromedriver");
+    // System.setProperty("webdriver.chrome.driver","/home/azureuser/essaysharproject/src/main/resources/chromedriver_linux64/chromedriver");
 
     ChromeOptions options = new ChromeOptions();
     options.addArguments("--disable-dev-shm-usage");
