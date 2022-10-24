@@ -96,6 +96,23 @@ public class App {
     wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[2]/div/div[5]/div/div[2]/table/tbody/tr[9]/td[2]/a")));
 
     app.driver.findElement(By.xpath("/html/body/div[2]/div/div[5]/div/div[2]/table/tbody/tr[9]/td[2]/a")).click();
+    app.driver.navigate().refresh();
+    app.driver.navigate().refresh();
+    app.driver.navigate().refresh();
+    app.driver.navigate().refresh();
+    app.driver.navigate().refresh();
+    app.driver.navigate().refresh();
+    app.driver.navigate().refresh();
+    app.driver.navigate().refresh();
+    app.driver.navigate().refresh();
+    app.driver.navigate().refresh();
+    app.driver.navigate().refresh();
+    app.driver.navigate().refresh();
+    app.driver.navigate().refresh();
+    app.driver.navigate().refresh();
+    app.driver.navigate().refresh();
+    app.driver.navigate().refresh();
+    app.driver.navigate().refresh();
 
     try {
 
