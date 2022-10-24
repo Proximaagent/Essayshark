@@ -1,6 +1,6 @@
 version: "2"
 services:
-  essaysharproject:
+  essaysharkproject:
     image: essaysharproject:latest
     container_name: essaysharproject
     ports:

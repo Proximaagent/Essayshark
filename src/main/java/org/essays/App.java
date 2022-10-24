@@ -21,10 +21,16 @@ public class App {
   JavascriptExecutor js;
   
   public App() {
-    System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver");
+    System.setProperty("webdriver.chrome.driver","/home/beckhamochieng/essaysharproject/src/main/resources/chromedriver_linux64/chromedriver");
     // System.setProperty("webdriver.chrome.driver","/home/azureuser/EssayShark/src/chromedriver");
 
     ChromeOptions options = new ChromeOptions();
+    options.addArguments("--disable-dev-shm-usage");
+    options.addArguments("start-maximized");
+    options.addArguments("disable-infobars");
+    options.addArguments("--disable-extensions");
+    options.addArguments("--disable-gpu");
+    options.addArguments("--no-sandbox");
     options.addArguments("--headless");
     driver = new ChromeDriver(options);
 
@@ -72,11 +78,12 @@ public class App {
     // 8 | click | css=.bb-authFields | 
     app.driver.findElement(By.cssSelector(".bb-authFields")).click();
     // 9 | type | css=.bb-authFields .bb-loginField > .bb-input | Glule83x@gmail.com
-    app.driver.findElement(By.cssSelector(".bb-authFields .bb-loginField > .bb-input")).sendKeys("");
+    app.driver.findElement(By.cssSelector(".bb-authFields .bb-loginField > .bb-input")).sendKeys("Glule83x@gmail.com");
     // 10 | click | name=password | 
     app.driver.findElement(By.name("password")).click();
     // 11 | type | name=password | Lexz2023
-    app.driver.findElement(By.name("password")).sendKeys("");
+    app.driver.findElement(By.name("password")).sendKeys("Lexz2023");
+    System.out.println("Logged in now");
     // Clixk login button
     // driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
     // Enter
