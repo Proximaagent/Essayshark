@@ -101,18 +101,7 @@ public class App {
     app.driver.navigate().refresh();
     app.driver.navigate().refresh();
     app.driver.navigate().refresh();
-    app.driver.navigate().refresh();
-    app.driver.navigate().refresh();
-    app.driver.navigate().refresh();
-    app.driver.navigate().refresh();
-    app.driver.navigate().refresh();
-    app.driver.navigate().refresh();
-    app.driver.navigate().refresh();
-    app.driver.navigate().refresh();
-    app.driver.navigate().refresh();
-    app.driver.navigate().refresh();
-    app.driver.navigate().refresh();
-    app.driver.navigate().refresh();
+
 
     try {
 
@@ -120,6 +109,8 @@ public class App {
             app.driver.navigate().refresh();
             app.driver.findElement(By.id("rec_bid")).click();
             app.driver.findElement(By.id("apply_order")).click();
+            app.driver.navigate().refresh();
+
         }
 
       } catch (Exception e) {
