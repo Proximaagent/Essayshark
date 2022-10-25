@@ -1,7 +1,9 @@
-version: "2"
+version: '3.8'
+
 services:
   essaysharkproject:
-    image: essaysharproject:latest
-    container_name: essaysharproject
+    build:
+      context: ./
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"

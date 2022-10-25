@@ -15,14 +15,14 @@ import java.util.Map;
 
 import static org.junit.Assert.*;
 
-public class App  extends Thread {
+public class App {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
   
   public App()  {
-    // System.setProperty("webdriver.chrome.driver","/home/beckhamochieng/essaysharproject/src/main/resources/chromedriver_linux64/chromedriver");
-    System.setProperty("webdriver.chrome.driver","/home/azureuser/essaysharproject/src/main/resources/chromedriver_linux64/chromedriver");
+    System.setProperty("webdriver.chrome.driver","/home/beckhamochieng/essaysharproject/src/main/resources/chromedriver_linux64/chromedriver");
+    // System.setProperty("webdriver.chrome.driver","/home/azureuser/essaysharproject/src/main/resources/chromedriver_linux64/chromedriver");
 
     ChromeOptions options = new ChromeOptions();
     options.addArguments("--disable-dev-shm-usage");
@@ -33,6 +33,7 @@ public class App  extends Thread {
     options.addArguments("--no-sandbox");
     options.addArguments("--headless");
     driver = new ChromeDriver(options);
+    // driver = new ChromeDriver();
 
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
@@ -103,13 +104,14 @@ public class App  extends Thread {
     try {
 
        do {
+            app.driver.navigate().refresh();
             app.driver.findElement(By.id("rec_bid")).click();
             app.driver.findElement(By.id("apply_order")).click();
-            app.driver.navigate().refresh();
 
         }  while (true);
 
       } catch (Exception e) {
+        System.out.println("App");
         app.driver.findElement(By.xpath("//*[@id='user_nav']/li[1]/a")).click();
     }
     
