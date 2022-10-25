@@ -15,12 +15,12 @@ import java.util.Map;
 
 import static org.junit.Assert.*;
 
-public class App {
+public class App  extends Thread {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
   
-  public App() {
+  public App()  {
     // System.setProperty("webdriver.chrome.driver","/home/beckhamochieng/essaysharproject/src/main/resources/chromedriver_linux64/chromedriver");
     System.setProperty("webdriver.chrome.driver","/home/azureuser/essaysharproject/src/main/resources/chromedriver_linux64/chromedriver");
 
@@ -90,27 +90,30 @@ public class App {
     app.driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
     /*
      * OPENING TASK TABE AND DOING THEM
+     * 
     */
+    
+    
 
- while (true)  {
+ do  {
     wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[2]/div/div[5]/div/div[2]/table/tbody/tr[9]/td[2]/a")));
 
     app.driver.findElement(By.xpath("/html/body/div[2]/div/div[5]/div/div[2]/table/tbody/tr[9]/td[2]/a")).click();
 
     try {
 
-        while (true) {
+       do {
             app.driver.findElement(By.id("rec_bid")).click();
             app.driver.findElement(By.id("apply_order")).click();
             app.driver.navigate().refresh();
 
-        }
+        }  while (true);
 
       } catch (Exception e) {
         app.driver.findElement(By.xpath("//*[@id='user_nav']/li[1]/a")).click();
     }
     
-}
+} while (true);
 
 }
 }
