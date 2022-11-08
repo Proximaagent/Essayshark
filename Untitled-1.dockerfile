@@ -1,3 +1,4 @@
+
 FROM maven:3.6.2-jdk-11 AS builder
 WORKDIR /home/sources
 COPY ./* /home/sources/Essayshark/

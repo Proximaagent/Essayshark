@@ -15,14 +15,15 @@ import java.util.Map;
 
 import static org.junit.Assert.*;
 
+
 public class App {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
   
   public App()  {
-    System.setProperty("webdriver.chrome.driver","/home/beckhamochieng/essaysharproject/src/main/resources/chromedriver");
-    // System.setProperty("webdriver.chrome.driver","/home/azureuser/essaysharproject/src/main/resources/chromedriver");
+    // System.setProperty("webdriver.chrome.driver","/home/beckhamochieng/essaysharproject/src/main/resources/chromedriver");
+    System.setProperty("webdriver.chrome.driver","/home/azureuser/essaysharproject/src/main/resources/chromedriver");
 
     ChromeOptions options = new ChromeOptions();
     options.addArguments("--disable-dev-shm-usage");
@@ -43,6 +44,7 @@ public class App {
     driver.quit();
   }
 
+  // This represent main thread, it will execute in a sequence.
   public static void main(String ...args) {
     var app = new App();
 
@@ -93,6 +95,19 @@ public class App {
      * OPENING TASK TABE AND DOING THEM
      * 
     */
+    // class RefreshPages extends Thread {
+    //   @Override
+    //   public void run() {
+    //     app.driver.navigate().refresh();
+    //   }
+    // }
+    // class ClickButtons extends Thread {
+    //   @Override
+    //   public void run() {
+    //     app.driver.findElement(By.id("rec_bid")).click();
+    //     // wait.until(ExpectedConditions.presenceOfElementLocated(By.id("apply_order")));
+    //     app.driver.findElement(By.id("apply_order")).click();      }
+    // }
     
     
 
@@ -102,16 +117,18 @@ public class App {
     app.driver.findElement(By.xpath("/html/body/div[2]/div/div[5]/div/div[2]/table/tbody/tr[9]/td[2]/a")).click();
 
     try {
-
+ 
        do {
-            app.driver.navigate().refresh();
-            app.driver.findElement(By.id("rec_bid")).click();
-            app.driver.findElement(By.id("apply_order")).click();
+        app.driver.navigate().refresh();
+        app.driver.findElement(By.id("rec_bid")).click();
+        // wait.until(ExpectedConditions.presenceOfElementLocated(By.id("apply_order")));
+        app.driver.findElement(By.id("apply_order")).click();
+
+
 
         }  while (true);
 
       } catch (Exception e) {
-        System.out.println("App");
         app.driver.findElement(By.xpath("//*[@id='user_nav']/li[1]/a")).click();
     }
     
